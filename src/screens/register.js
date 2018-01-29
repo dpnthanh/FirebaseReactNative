@@ -25,6 +25,7 @@ export default class App extends Component{
     }
   }
   render() {
+      const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <TextInput
@@ -43,6 +44,7 @@ export default class App extends Component{
             Firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pass)
             .then(()=>{
                 Alert.alert('Dang ki thanh cong')
+                navigate('login')
             })
             .catch(function(error) {
                 Alert.alert('Dang ki that bai')
