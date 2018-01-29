@@ -25,6 +25,7 @@ export default class App extends Component{
     }
   }
   render() {
+    const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <TextInput
@@ -43,20 +44,21 @@ export default class App extends Component{
             Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass)
             .then(()=>{
                 Alert.alert('Dang nhap thanh cong')
+                navigate('home')
             })
             .catch(function(error) {
-                Alert.alert('Dang nhap that bai')
+                Alert.alert('Sai tên tài khoảng hoặc mật khẩu')
             });
           }}
-          style={styles.loginButton}>
-          <Text style={styles.buttonText}>Dang Nhap</Text>
+          style={styles.button}>
+          <Text style={styles.buttonText}>Đăng nhập</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           onPress={()=>{
-            
+            navigate('register')
           }}
-          style={styles.loginButton}>
-          <Text style={styles.buttonText}>Dang Ki</Text>
+          style={styles.button}>
+          <Text style={styles.buttonText}>Đăng kí</Text>
         </TouchableOpacity>
       </View>
     );
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
   input:{
     width: width*167.5/187.5
   },
-  loginButton:{
+  button:{
     width:width*167.5/187.5,
     height:width*22.5/187.5,
     justifyContent:'center',
