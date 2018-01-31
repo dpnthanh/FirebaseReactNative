@@ -12,6 +12,7 @@ import {Firebase} from './src/config/firebase'
 import RootScreen from './src/config/navigation'
 export default class App extends Component{
   render() {
+    console.disableYellowBox = true
     return (
       <RootScreen/>
     );

@@ -3,7 +3,6 @@ import LoginScreen from '../screens/login'
 import RegisterScreen from '../screens/register'
 import HomeScreen from '../screens/home'
 export default StackNavigator({
-    
     login:{
         screen: LoginScreen,
         navigationOptions:{

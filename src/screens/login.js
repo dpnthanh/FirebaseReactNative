@@ -43,7 +43,6 @@ export default class App extends Component{
           onPress={()=>{
             Firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass)
             .then(()=>{
-                Alert.alert('Dang nhap thanh cong')
                 navigate('home')
             })
             .catch(function(error) {
